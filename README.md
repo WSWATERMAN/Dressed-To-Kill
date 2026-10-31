@@ -79,7 +79,7 @@ Tests cover provider selection, demo-host enforcement, payload validation, batch
 - Kalshi's REST market lifecycle statuses are `initialized`, `active`, `inactive`, `closed`, `determined`, `disputed`, `amended`, and `finalized`. The first seven remain unresolved for paper accounting; only `finalized` is terminal in the current REST API. `settled` is a list-filter value, but is also accepted as a legacy terminal status for compatibility. Kalshi documents `yes`, `no`, and `scalar` as possible results after determination. The app pays paper positions only for finalized `yes`/`no`; missing or unsupported finalized results (including `scalar`) become `review_required` with no payout or P&L applied. Mock data never settles positions. See [Market Lifecycle](https://docs.kalshi.com/getting_started/market_lifecycle).
 - The outcome checker runs only while the app is running in demo mode. After downtime it checks unresolved positions at startup. Demo API/network failures delay tracking until a later retry.
 - Fee estimates follow the linked schedule checked date, but the real fee depends on actual execution type and the market's applicable schedule; see Paper fee estimates above. Slippage, partial fills, closing trades, and unrealized mark-to-market P&L are not modeled.
-- The first page of up to 100 markets is read; cursor pagination and category metadata may be incomplete. Data availability depends on Kalshi's demo environment.
+- The demo market catalog loads incrementally as cursor pages arrive; full availability depends on the demo API responding for each page.
 - The practice order price is manually adjustable. The app checks simulated cash including the estimated fee but does not model a fill book or execution uncertainty.
 - Prices are market signals, not objective probabilities. Contract rules, liquidity, spread, stale data, fees, and full loss of the amount paid matter. This is educational software, not financial advice and does not promise revenue.
 - Do not put credentials in this app. It has no credentialed API integration.
@@ -87,5 +87,5 @@ Tests cover provider selection, demo-host enforcement, payload validation, batch
 
 ## GitHub
 
-The intended project repository is `https://github.com/WSWATERMAN/Dressed-To-Kill` (private). The project version is **Dressed To Kill**; future versions will use hard rock album names. `.env`, local SQLite data, and Python caches are excluded from Git.
+The project repository is [`WSWATERMAN/Dressed-To-Kill`](https://github.com/WSWATERMAN/Dressed-To-Kill) (private). The project version is **Dressed To Kill**; future versions will use hard rock album names. `.env`, local SQLite data, and Python caches are excluded from Git.
 

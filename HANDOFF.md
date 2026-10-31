@@ -6,7 +6,7 @@
 
 Local-first educational app for inspecting Kalshi demo event markets, recording simulated paper positions, estimating transaction fees, and tracking public demo settlement outcomes. It is not a revenue tool and does not place exchange orders.
 
-Intended project repository: `https://github.com/WSWATERMAN/Dressed-To-Kill` (private). The local branch is `main`; review `git status` before committing or pushing. `.env`, local SQLite data, and Python caches are excluded from Git.
+Project repository: `https://github.com/WSWATERMAN/Dressed-To-Kill` (private). The local `main` branch tracks `origin/main`; review `git status` before committing or pushing. `.env`, local SQLite data, and Python caches are excluded from Git.
 
 ## Current capabilities
 
