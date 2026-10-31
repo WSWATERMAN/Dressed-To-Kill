@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#101c22"><title>Dressed To Kill — Kalshi Learning Lab</title>
+  <link rel="stylesheet" href="/styles.css"><script defer src="/app.js"></script>
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="/">K<span>•</span>LAB <small>DRESSED TO KILL</small></a><div class="mode"><i></i><span id="source">Connecting…</span><b>DEMO ONLY</b></div></header>
+  <main>
+    <section class="intro"><div><p class="eyebrow">LEARN BY EXPLORING</p><h1>Read the market.<br><em>Practice the trade.</em></h1><p class="sub">A local learning tool for event contracts. All practice orders use simulated funds and never reach Kalshi.</p></div><div class="loss-card"><span>SIMULATED CASH</span><strong id="cash">$1,000.00</strong><small>Practice balance · USD</small></div></section>
+    <nav class="tabs"><button class="tab active" data-view="markets">Markets <span id="market-count">—</span></button><button class="tab" data-view="portfolio">Paper portfolio <span id="order-count">0</span></button><button class="tab" data-view="learn">How it works</button></nav>
+    <section id="markets-view" class="view">
+      <div class="toolbar"><label class="search">⌕ <input id="search" placeholder="Search markets" aria-label="Search markets"></label><select id="status" aria-label="Market status"><option value="open">Open markets</option><option value="all">All statuses</option><option value="closed">Closed</option><option value="settled">Settled</option></select><span id="updated" class="muted"></span></div>
+      <p id="notice" class="notice" role="status"></p><div class="layout"><div id="market-list" class="market-list"></div><aside id="detail" class="detail"><div class="empty">Select a market to inspect contract details.</div></aside></div>
+    </section>
+    <section id="portfolio-view" class="view hidden"><h2>Paper portfolio</h2><p class="muted">Paper positions and settlement outcomes are saved in this project’s local database.</p><div id="portfolio"></div></section>
+    <section id="learn-view" class="view hidden"><h2>Event contracts, in brief</h2><div class="learn-grid"><article><b>01 / A question</b><h3>Yes or No</h3><p>Each contract represents an outcome defined by its market rules. Check the exact question and resolution source before interpreting a market.</p></article><article><b>02 / A price</b><h3>Market-implied signal</h3><p>A contract price from $0.01 to $0.99 may be read as a rough market-implied probability. It is a trading price, not a guarantee or objective forecast.</p></article><article><b>03 / A resolution</b><h3>Settlement</h3><p>Contracts settle according to their published rules and source. A winning contract generally pays $1; a losing one pays $0. Fees and execution prices affect results.</p></article><article><b>04 / A risk</b><h3>Loss is possible</h3><p>For a long position, the full amount paid can be lost. Liquidity, spread, fees, stale prices, and ambiguity in resolution rules matter.</p></article></div></section>
+    <footer>Educational software only · Not investment advice · Paper orders only · Times shown in your browser’s local timezone</footer>
+  </main>
+  <dialog id="confirm"><form method="dialog"><p class="eyebrow">PAPER ORDER · SIMULATED</p><h2>Confirm practice order</h2><div id="order-summary"></div><div class="actions"><button value="cancel" class="button secondary">Cancel</button><button id="confirm-order" value="ok" class="button primary">Place paper order</button></div></form></dialog>
+</body></html>

@@ -1,0 +1,27 @@
+services:
+  kalshi-lab:
+    container_name: kalshiv2-learning-lab
+    build: .
+    environment:
+      APP_HOST: 0.0.0.0
+      APP_PORT: 8765
+      KALSHI_PROVIDER: ${KALSHI_PROVIDER:-kalshi_demo}
+      KALSHI_BASE_URL: ${KALSHI_BASE_URL:-https://external-api.demo.kalshi.co/trade-api/v2}
+      KALSHI_DB_PATH: /data/paper_portfolio.sqlite3
+      KALSHI_OUTCOME_POLL_SECONDS: ${KALSHI_OUTCOME_POLL_SECONDS:-300}
+    volumes:
+      - kalshiv2_paper_data:/data
+    ports:
+      - "127.0.0.1:8766:8765"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8765/healthz', timeout=2)"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+
+volumes:
+  kalshiv2_paper_data:
+    name: kalshiv2_paper_data
+
