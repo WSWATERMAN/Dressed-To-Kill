@@ -1,6 +1,6 @@
 # Dressed To Kill — Kalshi Learning Lab
 
-Project version name: **Dressed To Kill**. Future project versions will use hard rock album names.
+Project version name: **Dressed To Kill**. 
 
 A local-first learning app for browsing Kalshi demo markets, practicing with a paper portfolio, and tracking demo settlement outcomes. Paper orders are handled by this app and are never sent to Kalshi.
 
